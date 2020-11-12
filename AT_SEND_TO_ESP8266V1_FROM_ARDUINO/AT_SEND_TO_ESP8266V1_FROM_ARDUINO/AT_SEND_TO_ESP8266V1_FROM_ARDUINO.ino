@@ -13,9 +13,9 @@ void loop()
   
 }
 
-char uart_send(String str,int interval)
+char* uart_send(String str,int interval)
 {
-  char cvc[200];
+  static char cvc[200];
   str.toCharArray(cvc,str.length()+1);
   Serial2.write(cvc);
   delay(interval);
